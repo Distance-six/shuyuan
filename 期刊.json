@@ -9,9 +9,8 @@
     "enabled": true,
     "enabledCookieJar": false,
     "enabledExplore": true,
-    "enabledReview": false,
     "exploreUrl": "[\n    {\"title\":\"热门推荐\",\"url\":\"\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},\n    {\"title\":\"故事会\",\"url\":\"https://api.lifves.com/magazine/history?mag_id=183\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n    {\"title\":\"意林\",\"url\":\"https://api.lifves.com/magazine/history?mag_id=202\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n    {\"title\":\"读者\",\"url\":\"https://api.lifves.com/magazine/history?mag_id=171\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n    {\"title\":\"花火A\",\"url\":\"https://api.lifves.com/magazine/history?mag_id=186\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n    {\"title\":\"花火B\",\"url\":\"https://api.lifves.com/magazine/history?mag_id=554\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n    {\"title\":\"小小说月刊\",\"url\":\"https://api.lifves.com/magazine/history?mag_id=631\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n    {\"title\":\"环球人物\",\"url\":\"https://api.lifves.com/magazine/history?mag_id=1761\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n    {\"title\":\"军事文摘\",\"url\":\"https://api.lifves.com/magazine/history?mag_id=57\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}}\n]",
-    "lastUpdateTime": 1694504062996,
+    "lastUpdateTime": 1694865069897,
     "respondTime": 180000,
     "ruleBookInfo": {
         "author": "data_list.title",
@@ -39,7 +38,7 @@
     "ruleReview": {},
     "ruleSearch": {
         "author": "title",
-        "bookList": "data_list[*].data[*]\n\n\n",
+        "bookList": "data_list[*].data[*]",
         "bookUrl": "@js:\nfunction generateRandomString(length) {\n    var str = '';\n    var chars = 'abcdefghijklmnopqrstuvwxyz0123456789';\n    for (var i = 0; i < length; i++) {\n      str += chars.charAt(Math.floor(Math.random() * chars.length));\n    }\n    return str;\n  }\nvar ua = \"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0\";\nvar keys = \"apilifves5201314\";\nvar nostr = generateRandomString(32);\nvar times = Math.round(new Date().getTime()/1000).toString();\nvar str1 = \"timestamp=\" + times + \"&nonce=\" + nostr;\nvar secret = java.md5Encode(str1 + keys);\nvar headers = {\n    \"User-Agent\": ua,\n    \"Secret-Date\": str1,\n    \"Secreted\": secret\n}\nvar option = {   \n    \"headers\": headers,   \n};\n//java.log(result);\nvar url = \"https://api.lifves.com/magazine/book\";\nvar id = result.mag_id\nvar qishu = result.qishu\nvar s = \"?mag_id=\"+ id + \"&qishu=\" + qishu\nurl + s +\",\" + JSON.stringify(option) ;",
         "checkKeyWord": "故事会",
         "coverUrl": "img",
