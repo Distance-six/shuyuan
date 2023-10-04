@@ -1,0 +1,60 @@
+[
+    {
+        "bookSourceComment": "",
+        "bookSourceGroup": "📖期刊",
+        "bookSourceName": "📖期刊阅读",
+        "bookSourceType": 0,
+        "bookSourceUrl": "http://qk.demo.lifves.com/",
+        "bookUrlPattern": "",
+        "customOrder": 0,
+        "enabled": true,
+        "enabledCookieJar": false,
+        "enabledExplore": true,
+        "exploreUrl": "[\n    {\"title\":\"热门推荐\",\"url\":\"\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":1}},\n    {\"title\":\"故事会\",\"url\":\"https://api.lifves.com/magazine/history?mag_id=183\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n    {\"title\":\"意林\",\"url\":\"https://api.lifves.com/magazine/history?mag_id=202\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n    {\"title\":\"读者\",\"url\":\"https://api.lifves.com/magazine/history?mag_id=171\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n    {\"title\":\"花火A\",\"url\":\"https://api.lifves.com/magazine/history?mag_id=186\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n    {\"title\":\"花火B\",\"url\":\"https://api.lifves.com/magazine/history?mag_id=554\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n    {\"title\":\"小小说月刊\",\"url\":\"https://api.lifves.com/magazine/history?mag_id=631\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n    {\"title\":\"环球人物\",\"url\":\"https://api.lifves.com/magazine/history?mag_id=1761\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}},\n    {\"title\":\"军事文摘\",\"url\":\"https://api.lifves.com/magazine/history?mag_id=57\",\"style\":{\"layout_flexGrow\":1,\"layout_flexBasisPercent\":0.2}}\n]",
+        "lastUpdateTime": 1696399891387,
+        "respondTime": 180000,
+        "ruleBookInfo": {
+            "author": "data_list.title",
+            "coverUrl": "data_list.img",
+            "init": "",
+            "intro": "",
+            "lastChapter": "data_list.qishu",
+            "name": "data_list.qishu",
+            "tocUrl": "@js:\nfunction generateRandomString(length) {\n    var str = '';\n    var chars = 'abcdefghijklmnopqrstuvwxyz0123456789';\n    for (var i = 0; i < length; i++) {\n      str += chars.charAt(Math.floor(Math.random() * chars.length));\n    }\n    return str;\n  }\nvar ua = \"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0\";\nvar keys = \"apilifves5201314\";\nvar nostr = generateRandomString(32);\nvar times = Math.round(new Date().getTime()/1000).toString();\nvar str1 = \"timestamp=\" + times + \"&nonce=\" + nostr;\nvar secret = java.md5Encode(str1 + keys);\nvar headers = {\n    \"User-Agent\": ua,\n    \"Secret-Date\": str1,\n    \"Secreted\": secret\n}\nvar option = {   \n    \"headers\": headers,   \n};\njava.log(baseUrl);\nvar t = baseUrl;\nvar reg = /http(.*?),/;\nvar url = t.match(reg)[0];\nurl + JSON.stringify(option) ;\n"
+        },
+        "ruleContent": {
+            "content": "<js>\nfunction generateRandomString(length) {\n    var str = '';\n    var chars = 'abcdefghijklmnopqrstuvwxyz0123456789';\n    for (var i = 0; i < length; i++) {\n      str += chars.charAt(Math.floor(Math.random() * chars.length));\n    }\n    return str;\n  }\nvar ua = \"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0\";\nvar keys = \"apilifves5201314\";\nvar nostr = generateRandomString(32);\nvar times = Math.round(new Date().getTime()/1000).toString();\nvar str1 = \"timestamp=\" + times + \"&nonce=\" + nostr;\nvar secret = java.md5Encode(str1 + keys);\nvar headers = {\n    \"User-Agent\": ua,\n    \"Secret-Date\": str1,\n    \"Secreted\": secret\n}\nvar option = {   \n    \"headers\": headers,    \n};\n\nfunction gettext(a){\n    var url = baseUrl;\n    var text = java.ajax(url+\",\"+java.put(\"headers\",JSON.stringify(a)));\n    return text\n}\nresult =  gettext(option)\n//java.log(result);\n\n</js>\n\ndata_list.content",
+            "imageStyle": "FULL",
+            "sourceRegex": "",
+            "webJs": ""
+        },
+        "ruleExplore": {
+            "author": "title",
+            "bookList": "<js>\nfunction generateRandomString(length) {\n    var str = '';\n    var chars = 'abcdefghijklmnopqrstuvwxyz0123456789';\n    for (var i = 0; i < length; i++) {\n      str += chars.charAt(Math.floor(Math.random() * chars.length));\n    }\n    return str;\n  }\nvar ua = \"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0\";\nvar keys = \"apilifves5201314\";\nvar nostr = generateRandomString(32);\nvar times = Math.round(new Date().getTime()/1000).toString();\nvar str1 = \"timestamp=\" + times + \"&nonce=\" + nostr;\nvar secret = java.md5Encode(str1 + keys);\nvar headers = {\n    \"User-Agent\": ua,\n    \"Secret-Date\": str1,\n    \"Secreted\": secret\n}\nvar option = {   \n    \"headers\": headers, \n};\nfunction gettext(a){\n    var url = baseUrl;\n    var text = java.ajax(url+\",\"+java.put(\"headers\",JSON.stringify(a)));\n    return text\n}\nresult =  gettext(option)\n</js>\ndata_list[*].data[*]",
+            "bookUrl": "@js:\nfunction generateRandomString(length) {\n    var str = '';\n    var chars = 'abcdefghijklmnopqrstuvwxyz0123456789';\n    for (var i = 0; i < length; i++) {\n      str += chars.charAt(Math.floor(Math.random() * chars.length));\n    }\n    return str;\n  }\nvar ua = \"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0\";\nvar keys = \"apilifves5201314\";\nvar nostr = generateRandomString(32);\nvar times = Math.round(new Date().getTime()/1000).toString();\nvar str1 = \"timestamp=\" + times + \"&nonce=\" + nostr;\nvar secret = java.md5Encode(str1 + keys);\nvar headers = {\n    \"User-Agent\": ua,\n    \"Secret-Date\": str1,\n    \"Secreted\": secret\n}\nvar option = {   \n    \"headers\": headers,   \n};\n//java.log(result);\nvar url = \"https://api.lifves.com/magazine/book\";\nvar id = result.mag_id\nvar qishu = result.qishu\nvar s = \"?mag_id=\"+ id + \"&qishu=\" + qishu\nurl + s +\",\" + JSON.stringify(option) ;",
+            "coverUrl": "img",
+            "lastChapter": "qishu",
+            "name": "qishu"
+        },
+        "ruleReview": {},
+        "ruleSearch": {
+            "author": "title",
+            "bookList": "data_list[*].data[*]",
+            "bookUrl": "@js:\nfunction generateRandomString(length) {\n    var str = '';\n    var chars = 'abcdefghijklmnopqrstuvwxyz0123456789';\n    for (var i = 0; i < length; i++) {\n      str += chars.charAt(Math.floor(Math.random() * chars.length));\n    }\n    return str;\n  }\nvar ua = \"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0\";\nvar keys = \"apilifves5201314\";\nvar nostr = generateRandomString(32);\nvar times = Math.round(new Date().getTime()/1000).toString();\nvar str1 = \"timestamp=\" + times + \"&nonce=\" + nostr;\nvar secret = java.md5Encode(str1 + keys);\nvar headers = {\n    \"User-Agent\": ua,\n    \"Secret-Date\": str1,\n    \"Secreted\": secret\n}\nvar option = {   \n    \"headers\": headers,   \n};\n//java.log(result);\nvar url = \"https://api.lifves.com/magazine/book\";\nvar id = result.mag_id\nvar qishu = result.qishu\nvar s = \"?mag_id=\"+ id + \"&qishu=\" + qishu\nurl + s +\",\" + JSON.stringify(option) ;",
+            "checkKeyWord": "故事会",
+            "coverUrl": "img",
+            "lastChapter": "qishu",
+            "name": "qishu"
+        },
+        "ruleToc": {
+            "chapterList": "data_list.ml[*].list[*]",
+            "chapterName": "title",
+            "chapterUrl": "@js:\nvar id = {{$.read_id}};\nvar url = \"https://api.lifves.com/magazine/read\";\nvar s = \"?read_id=\"+ id\nurl + s",
+            "isVolume": "",
+            "preUpdateJs": "java.refreshTocUrl()",
+            "updateTime": ""
+        },
+        "searchUrl": "@js:\nfunction generateRandomString(length) {\n    var str = '';\n    var chars = 'abcdefghijklmnopqrstuvwxyz0123456789';\n    for (var i = 0; i < length; i++) {\n      str += chars.charAt(Math.floor(Math.random() * chars.length));\n    }\n    return str;\n  }\nvar url = \"https://api.lifves.com/magazine/search?keyword=\"+key\nvar ua = \"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0\";\nvar keys = \"apilifves5201314\";\nvar nostr = generateRandomString(32);\nvar times = Math.round(new Date().getTime()/1000).toString();\nvar str1 = \"timestamp=\" + times + \"&nonce=\" + nostr;\nvar secret = java.md5Encode(str1 + keys);\nvar headers = {\n    \"User-Agent\": ua,\n    \"Secret-Date\": str1,\n    \"Secreted\": secret\n}\nvar option = {   \n    \"headers\": headers, \n};\nvar wz = java.ajax(url+','+java.put(\"headers\",JSON.stringify(option)));\nvar data = JSON.parse(wz)\nvar id = data.data_list[0].mag_id\n\"https://api.lifves.com/magazine/history?mag_id=\"+id+\",\" + JSON.stringify(option)",
+        "weight": 0
+    }
+]
