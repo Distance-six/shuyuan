@@ -28,7 +28,7 @@
         "wordCount": ".novel_wordnumber"
     },
     "ruleContent": {
-        "content": "@js:\nvar option = get_head()\nfunction gettext(a){\n    var url = baseUrl +\",\"+java.put(\"headers\",JSON.stringify(a))\n    var text = java.ajax(url)\n    return text\n}\nlet res =  gettext(option)\nvar d = java.getString(\"$.data..content\",res)\nif(d!=\"\"){\n\t let content = java.getString(\"$.data..content\",res)\n\t java.log(content)\n\t let Map = source.getLoginHeaderMap();\n   Map = Map==null?{\"zz\":\"0\"}:Map;\n   let word = Map[\"zz\"];\n   if(word==1){\n   let saybody;\n   saybody=java.getString(\"$.data..chapter_postscript\",res);\n    let say=saybody!=\"\"?\"\\n【📢作者有话说】\\n\"+saybody:\"\";\n    result = content + say\n   \t}else{\n   \t\tresult = content\n   \t\t}\n\t}else{\n\t\tresult=\"出错啦❗\\n错误原因：接口访问频繁或未解锁Vip章节\"\n\t\t}\nresult"
+        "content": "@js:\nvar option = get_head()\nfunction gettext(a){\n    var url = baseUrl +\",\"+java.put(\"headers\",JSON.stringify(a))\n    var text = java.ajax(url)\n    return text\n}\nlet res =  gettext(option)\nvar d = java.getString(\"$.data..content\",res)\nif(d!=\"\"){\n\t let content = java.getString(\"$.data..content\",res);\n\t let Map = source.getLoginHeaderMap();\n   Map = Map==null?{\"zz\":\"0\"}:Map;\n   let word = Map[\"zz\"];\n   if(word==1){\n   let saybody;\n   saybody=java.getString(\"$.data..chapter_postscript\",res);\n    let say=saybody!=\"\"?\"\\n【📢作者有话说】\\n\"+saybody:\"\";\n    result = content + say\n   \t}else{\n   \t\tresult = content\n   \t\t}\n\t}else{\n\t\tresult=\"出错啦❗\\n错误原因：接口访问频繁或未解锁Vip章节\"\n\t\t}\nresult"
     },
     "ruleExplore": {
         "author": ".author",
